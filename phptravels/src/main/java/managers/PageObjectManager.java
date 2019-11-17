@@ -2,12 +2,14 @@ package managers;
 
 import org.openqa.selenium.WebDriver;
 import pageObjects.HomePage;
+import pageObjects.RestAssuredPage;
 
 public class PageObjectManager {
 
 
     private WebDriver driver;
     private HomePage homepage;
+    private RestAssuredPage restAssuredPage;
 
     public PageObjectManager(WebDriver driver){
         this.driver = driver;
@@ -15,5 +17,9 @@ public class PageObjectManager {
 
     public HomePage getHomePage(){
         return (homepage == null) ? homepage = new HomePage(driver) : homepage;
+    }
+
+    public RestAssuredPage getRestAssuredPage(){
+        return (restAssuredPage == null) ? restAssuredPage = new RestAssuredPage(driver) : restAssuredPage;
     }
 }

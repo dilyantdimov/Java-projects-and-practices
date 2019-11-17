@@ -40,6 +40,12 @@ public class ConfigFileReader {
         else throw new RuntimeException("appUrl not specified in the Configuration.properties file.");
     }
 
+    public String getEndPointURL(){
+        String endPointURL = properties.getProperty("endPointURL");
+        if(endPointURL!= null) return endPointURL;
+        else throw new RuntimeException("appUrl not specified in the Configuration.properties file.");
+    }
+
     //Gets driver path from the configuration.properties file
     public String getDriverPath(){
         String driverPath = properties.getProperty("driverPath");
